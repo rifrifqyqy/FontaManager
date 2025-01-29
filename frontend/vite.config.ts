@@ -7,7 +7,7 @@ export default defineConfig({
   server:{
     proxy: {
       '/api': { 
-        target: 'http://localhost:3000', // Gunakan target lokal ini saat pengembangan
+        target: 'https://fonta-manager.vercel.app/', // Gunakan target lokal ini saat pengembangan
         changeOrigin: true,
         secure: false
       }

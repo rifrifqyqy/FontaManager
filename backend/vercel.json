@@ -1,14 +1,15 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "fontbot.py",
+      "src": "api/fontbot.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "fontbot.py"
+      "dest": "/api/fontbot.py"
     }
   ]
 }
