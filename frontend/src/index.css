@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-light-100: #f2f2f2;
+  --color-light-200: #e6e6e6;
+  --color-light-300: #d9d9d9;
+  --color-light-400: #cccccc;
+  --color-light-500: #b3b3b3;
+
+  /* buatkan set warna dark untuk tailwind versi 4 */
+  /* buat untuk web dark mode */
+  --color-dark-100: #121214;
+  --color-dark-200: #26262c;
+  --color-dark-300: #26262c;
+  --color-dark-400: #2f3037;
+  --color-dark-500: #4b4c52;
+
+  /* buat satu color gradien untuk border antara skyblue dan purple */
+
+  --color-gradient: linear-gradient(90deg, rgba(144, 224, 239, 0.3), rgba(200, 182, 255, 0.3));
+}
+
+.border-gradient {
+  border-image: var(--color-gradient);
+  border-image-slice: 1;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-dark-100);
+  color: var(--color-dark-500);
+}
+
+.title-gradient {
+  background: linear-gradient(92deg, #FC58A3 -4.98%, #ececec 72.52%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* buatkan warna active untuk navlink */

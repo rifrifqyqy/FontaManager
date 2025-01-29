@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Font Installer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <!-- main component -->
+
+    <main class="container">
+      <header>
+        <h1>Font Installer Windows</h1>
+        <p>A Tools to install massive fonts. created by <a href="https://github.com/rifrifqyqy">Liluo Egamediev</a>.</p>
+      </header>
+
+      <section>
+        <form method="POST" enctype="multipart/form-data" action="/upload">
+          <input type="file" name="file" multiple />
+          <button type="submit">Install Fonts</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- end main component  -->
+  </body>
+</html>

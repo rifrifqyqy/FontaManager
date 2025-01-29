@@ -1,0 +1,68 @@
+@import "tailwindcss";
+:root {
+  /* buatkan set warna dark dari dark100 sampai 500 */
+  --dark100: #1a1a1a;
+  --dark200: #333333;
+  --dark300: #4d4d4d;
+  --dark400: #666666;
+  --dark500: #808080;
+
+  /* buatkan set warna light dari 100 - 500 */
+  --light100: #f2f2f2;
+  --light200: #e6e6e6;
+  --light300: #d9d9d9;
+  --light400: #cccccc;
+  --light500: #b3b3b3;
+
+  /* buatkan set warna biru dari 100 -500 */
+  --blue100: #cce6ff;
+  --blue200: #99ccff;
+  --blue300: #66b3ff;
+  --blue400: #3399ff;
+  --blue500: #0080ff;
+
+  /* buatkan set warna purple dari 100 -500  */
+  --purple100: #e6ccff;
+  --purple200: #cc99ff;
+  --purple300: #b366ff;
+  --purple400: #9933ff;
+  --purple500: #8000ff;
+}
+/* reset css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--light100);
+}
+
+/* buatkan kelas container yang fungsinya seperti di tailwind */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+h1 {
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="file"] {
+  margin-bottom: 10px;
+}

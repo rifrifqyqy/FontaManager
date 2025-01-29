@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "fontbot.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "fontbot.py"
+    }
+  ]
+}
