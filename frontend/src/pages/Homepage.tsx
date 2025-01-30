@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Modal from "../components/Modal";
+import { API_URL } from "../utils/envUrl";
 
 export default function Homepage() {
   const [files, setFiles] = useState<File[]>([]);
@@ -27,7 +28,7 @@ export default function Homepage() {
     });
 
     try {
-      const response = await fetch('http://localhost:5000/upload', {
+      const response = await fetch(`${API_URL}/upload`, {
         method: 'POST',
         body: formData,
       });

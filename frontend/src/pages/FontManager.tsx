@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { API_URL } from '../utils/envUrl';
 
 
 interface Font {
@@ -15,7 +16,7 @@ const FontManager = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/fonts')
+    fetch(`${API_URL}/fonts`)
       .then(response => response.json())
       .then(data => setFonts(data));
   }, []);
