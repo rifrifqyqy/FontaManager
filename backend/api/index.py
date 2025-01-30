@@ -85,13 +85,16 @@ def upload_fonts():
         return jsonify(message="No file uploaded"), 400
     
     files = request.files.getlist('file')
+    uploaded_fonts = []
     total_fonts_installed = 0
     
     for file in files:
         font_path = os.path.join(FONT_DIR, file.filename)
+        temp_path = os.path.join("/tmp", file.filename)
         try:
-            file.save(font_path)
+            file.save(temp_path)
             total_fonts_installed += 1
+            uploaded_fonts.append(get_font_metadata(temp_path))
         except Exception as e:
             return jsonify(message=f"Error installing font: {str(e)}"), 500
 
