@@ -91,16 +91,9 @@ def upload_fonts():
     return jsonify(message=f"{total_fonts_installed} fonts installed successfully!")
 
 
-# Handler untuk deployment di Vercel
-from werkzeug.middleware.dispatcher import DispatcherMiddleware
-from werkzeug.wrappers import Response
-
+# Handler untuk Vercel
 def vercel_app(environ, start_response):
-    if environ['PATH_INFO'].startswith('/api'):
-        return app(environ, start_response)
-    return Response("Vercel Flask API running", status=200)(environ, start_response)
-
-app.wsgi_app = DispatcherMiddleware(vercel_app)
+    return app(environ, start_response)
 
 if __name__ == '__main__':
     app.run(debug=True)
