@@ -1,11 +1,7 @@
 {
   "redirects": [
     {
-      "source": "/",
-      "destination": "/api"
-    },
-    {
-      "source": "/(.*)",
+      "source": "/api",
       "destination": "/api"
     }
   ]
