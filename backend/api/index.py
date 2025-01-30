@@ -50,13 +50,13 @@ def get_installed_fonts():
     return fonts
 
 
-@app.route('/api/fonts', methods=['GET'])
+@app.route('/fonts', methods=['GET'])
 def list_fonts():
     fonts = get_installed_fonts()
     return jsonify(fonts)
 
 
-@app.route('/api/delete', methods=['POST'])
+@app.route('/delete', methods=['POST'])
 def delete_font():
     font_file = request.json.get('file')
     if not font_file:
@@ -72,7 +72,7 @@ def delete_font():
     return jsonify(message="Font not found"), 404
 
 
-@app.route('/api/upload', methods=['POST'])
+@app.route('/upload', methods=['POST'])
 def upload_fonts():
     if 'file' not in request.files:
         return jsonify(message="No file uploaded"), 400
