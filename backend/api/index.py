@@ -6,6 +6,13 @@ from fontTools.ttLib import TTFont
 app = Flask(__name__)
 CORS(app)
 
+@app.before_request
+def log_request():
+    print(f"Incoming request: {request.method} {request.path}")
+
+@app.route('/api/hello')
+def hello():
+    return jsonify({"message": "Backend Flask di Vercel bekerja!"})
 # Tentukan direktori font berdasarkan sistem operasi
 if os.name == 'nt':  # Windows
     FONT_DIR = os.path.join(os.environ.get("WINDIR", ""), "Fonts")
